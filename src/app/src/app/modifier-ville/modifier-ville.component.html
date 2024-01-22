@@ -1,0 +1,38 @@
+<form [formGroup]="profileForm"  #f="ngForm"  class="form-container">
+ 
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+          <mat-label>Pays</mat-label>
+          <input matInput placeholder="Modifier Pays" [ngModel]="ville.Pays" ngModel formControlName="Pays">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+          <mat-label>Capitale</mat-label>
+          <input matInput placeholder="Modifier Capitale"   [ngModel]="ville.capitale" ngModel formControlName="capitale">
+        </mat-form-field>
+      </div>
+    </div>
+    <br>
+  
+  
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width">
+            <mat-label>longitude</mat-label>
+            <input matInput placeholder="Modifier longitude" type="text"  [ngModel]="ville.lon" ngModel formControlName="lon">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+              <mat-label>Latitude</mat-label>
+              <input matInput placeholder="Modifier Latitude"  [ngModel]="ville.lat" ngModel   formControlName="lat">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    <button  class="full-width"  mat-raised-button color="primary" (click)="saveForm()" [disabled]="f.invalid">Modifier</button>
+  
+  </form>

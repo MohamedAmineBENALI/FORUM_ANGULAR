@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Login</a>
+    </div>
+  </nav>
+<br><br><br><br>
+
+    <div class="container">
+        <div class="BOX">
+<form [formGroup]="profileForm"  #f="ngForm"  class="form-container">
+ 
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Ajouter votre nom"   formControlName="nom">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+          <mat-label>Prénom</mat-label>
+          <input matInput placeholder="Ajouter votre prénom"  formControlName="prenom">
+        </mat-form-field>
+      </div>
+    </div>
+    <br>
+    <br>
+  
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ajouter votre email" type="text"   formControlName="email">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+              <mat-label>Mot de passe</mat-label>
+              <input matInput placeholder="Ajouter votre mot de passe"     formControlName="mdp">
+          </mat-form-field>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+
+        <div class="offset-3 col-sm-6">
+            <button  class="full-width"  mat-raised-button color="primary" (click)="saveForm()" [disabled]="f.invalid">S'inscrire</button>
+
+        </div>
+      </div>
+    <br>
+  
+  </form>
+</div>
+</div>

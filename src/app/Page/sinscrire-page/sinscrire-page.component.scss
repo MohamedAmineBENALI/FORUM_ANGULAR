@@ -1,0 +1,40 @@
+
+
+.BOX{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
+.full-width{
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+
+
+  }
+  
+  .top-padding{
+    padding-top: 3px;
+  }
+  
+  .margin-left mat-radio-button:not(:first-child){
+    margin-left:10px;
+  }
+  
+  
+  /*
+  .form-container{
+    margin: 100px;
+  }
+  */
+
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

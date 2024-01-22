@@ -1,0 +1,127 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="offset-3 col-8">
+          <div class="search-div">
+
+
+            <button mat-raised-button   (click)="onCreate()">
+              <span class="material-icons">add</span> Ajouter
+            </button>
+
+              
+            <mat-form-field class="search-form-field">
+                <input class="search-form-field2" matInput [(ngModel)]="searchKey" placeholder="Filter" autocomplete="off" (keyup)="applyFilter()">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+          </div>
+        
+      
+    
+    
+      </div>
+    </div>
+            
+          
+          <div class="mat-elevation-z8">
+            <mat-table  [dataSource]="reponcesDataSource"  matSort   >
+              <ng-container matColumnDef="Pays" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header >Pays</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Pays}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="capitale" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header  >Capitale</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.capitale}}</mat-cell>
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="lon" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header >Longitude</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.lon}}</mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="lat" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header  >Latitude </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.lat}}</mat-cell>
+              </ng-container>
+              
+
+              
+
+             
+
+
+             
+              <ng-container matColumnDef="Plus">
+                <mat-header-cell *matHeaderCellDef  >Plus</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #226D68;" placement="bottom" ngbTooltip="Voir le profil" (click)="plus(element.lon,element.lat)"><i class="fa-solid fa-earth-americas"></i></button>
+                </mat-cell>
+
+              </ng-container>
+
+              <ng-container matColumnDef="weather">
+                <mat-header-cell *matHeaderCellDef  >Weather</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #08c5D1;" placement="bottom"  (click)="weather(element.lon,element.lat)"><i class="fa-solid fa-cloud-sun"></i></button>
+                </mat-cell>
+
+              </ng-container>
+
+
+              
+             
+              
+              <ng-container matColumnDef="modifier">
+                <mat-header-cell *matHeaderCellDef  >Modifier</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #4A919E;" placement="bottom" ngbTooltip="Voir le profil" (click)="onUpdate(element.id)"><i class="fa-solid fa-pen"></i></button>
+                </mat-cell>
+
+                
+
+
+              </ng-container>
+              <ng-container matColumnDef="supprimer">
+                <mat-header-cell *matHeaderCellDef  >Supprimer</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #A7001E;" placement="bottom" ngbTooltip="Supprimer cet utilisateur" (click)="onDelete(element.id)" ><i class="fa-solid fa-trash-arrow-up"></i></button>
+                </mat-cell>
+              </ng-container>
+              
+           
+            
+
+
+            
+            
+        
+              <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef  colspan="6">
+                  Loading data...
+                </mat-footer-cell>
+              </ng-container>
+              <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef  colspan="6">
+                  No data.
+                </mat-footer-cell>
+              </ng-container>
+          
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+              <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':reponcesDataSource!=null}"></mat-footer-row>
+              <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(reponcesDataSource!=null && reponcesDataSource?.data.length==0)}"></mat-footer-row>
+        
+            </mat-table>
+            <mat-paginator [pageSizeOptions]="[5, 8, 10, 20, 100]" [pageSize]="8" showFirstLastButtons></mat-paginator>
+          </div>
+          </div>
+
+
+
+
+          

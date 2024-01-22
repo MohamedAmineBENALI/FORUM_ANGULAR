@@ -1,0 +1,105 @@
+<div id="navbar"> 
+  <ul> 
+	<li><a routerLink="/AdminForums">Forums</a></li> 
+	<li><a href="http://github.com">Postes</a></li> 
+	<li><a href="http://github.com">Utilisateurs</a></li> 
+	<li><a routerLink="/">Logout</a></li> 
+  </ul> 
+</div> 
+
+
+<div class="container">
+    <div class="row">
+        <div class="offset-3 col-8">
+          <div class="search-div">
+
+
+            <button mat-raised-button   (click)="onCreate()">
+              <span class="material-icons">add</span> Ajouter
+            </button>
+
+              
+            <mat-form-field class="search-form-field">
+                <input class="search-form-field2" matInput [(ngModel)]="searchKey" placeholder="Filter" autocomplete="off" (keyup)="applyFilter()">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+          </div>
+        
+      
+    
+    
+      </div>
+    </div>
+            
+          
+          <div class="mat-elevation-z8">
+            <mat-table  [dataSource]="reponcesDataSource"  matSort   >
+              <ng-container matColumnDef="titre" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header >Titre</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.titre}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="cdate" >
+                <mat-header-cell  *matHeaderCellDef mat-sort-header  >Date de Création</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.cdate}}</mat-cell>
+              </ng-container>
+
+              
+              <ng-container matColumnDef="modifier">
+                <mat-header-cell *matHeaderCellDef  >Modifier</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #4A919E;" placement="bottom" ngbTooltip="Voir le profil" (click)="onUpdate(element.id)"><i class="fa-solid fa-pen"></i></button>
+                </mat-cell>
+
+                
+
+
+              </ng-container>
+              <ng-container matColumnDef="supprimer">
+                <mat-header-cell *matHeaderCellDef  >Supprimer</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #A7001E;" placement="bottom" ngbTooltip="Supprimer cet utilisateur" (click)="onDelete(element.id)" ><i class="fa-solid fa-trash-arrow-up"></i></button>
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="postes">
+                <mat-header-cell *matHeaderCellDef  >Postes</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color: #3800a7;" placement="bottom" ngbTooltip="Supprimer cet utilisateur" (click)="postes(element.id)" ><i class="fa-regular fa-comment-dots"></i></button>
+                </mat-cell>
+              </ng-container>
+              
+           
+            
+
+
+            
+            
+        
+              <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef  colspan="6">
+                  Loading data...
+                </mat-footer-cell>
+              </ng-container>
+              <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef  colspan="6">
+                  No data.
+                </mat-footer-cell>
+              </ng-container>
+          
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+              <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':reponcesDataSource!=null}"></mat-footer-row>
+              <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(reponcesDataSource!=null && reponcesDataSource?.data.length==0)}"></mat-footer-row>
+        
+            </mat-table>
+            <mat-paginator [pageSizeOptions]="[5, 8, 10, 20, 100]" [pageSize]="8" showFirstLastButtons></mat-paginator>
+          </div>
+          </div>
+
+
+
+
+          

@@ -1,0 +1,496 @@
+/* -------------------------------- 
+
+File#: _1_background-decoration
+Title: Background Decoration
+Descr: A collection of background effects
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+/* reset */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: system-ui, sans-serif;
+  color: hsl(230, 7%, 23%);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: hsl(230, 13%, 9%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+}
+
+h2 {
+  font-size: 2.125rem; /* 34px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.375rem; /* 22px */
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  background-color: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a {
+  color: hsl(250, 84%, 54%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* -------------------------------- 
+
+Component 
+
+-------------------------------- */
+
+.bg-decoration {
+  --bg-decoration-color-1: hsl(240, 4%, 65%);
+  --bg-decoration-color-2: hsla(230, 13%, 9%, 0.4);
+  --bg-decoration-color-3: hsl(250, 84%, 54%);
+  --bg-decoration-color-4: hsl(342, 89%, 48%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-decoration__svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134%;
+  min-width: 1280px;
+  max-width: 1920px;
+  height: auto;
+}
+
+.bg-decoration__blending-element {
+  mix-blend-mode: overlay;
+}
+
+/* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+.cd-position-relative {
+  position: relative;
+}
+
+.cd-z-index-1 {
+  z-index: 1;
+}
+
+.cd-z-index-2 {
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: #000; 
+	background-color: #fff; 
+	} 
+
+
+/* -------------------------------- 
+
+File#: _1_feature-v6
+Title: Feature v6
+Descr: A section containing a list of features
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+/* reset */
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  * {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: system-ui, sans-serif;
+    color: hsl(230, 7%, 23%);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: hsl(230, 13%, 9%);
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2.5rem; /* 40px */
+  }
+  
+  h2 {
+    font-size: 2.125rem; /* 34px */
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  h4 {
+    font-size: 1.375rem; /* 22px */
+  }
+  
+  ol, ul, menu {
+    list-style: none;
+  }
+  
+  button, input, textarea, select {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+            appearance: none;
+  }
+  
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+  }
+  
+  a {
+    color: hsl(250, 84%, 54%);
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img, video, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* -------------------------------- 
+  
+  Icons 
+  
+  -------------------------------- */
+  
+  .cd-icon {
+    --size: 1em;
+    font-size: var(--size);
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    color: inherit;
+    fill: currentColor;
+    line-height: 1;
+    flex-shrink: 0;
+    max-width: initial;
+  }
+  
+  .cd-icon use { /* SVG symbols - enable icon color corrections */
+    color: inherit;
+    fill: currentColor;
+  }
+  
+  /* -------------------------------- 
+  
+  Component 
+  
+  -------------------------------- */
+  
+  .feature-v6 {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .feature-v6__grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  .feature-v6__grid > * {
+    min-width: 0;
+  }
+  
+  .feature-v6__img {
+    width: 100%;
+    max-height: 300px; /* Ajustez la hauteur en conséquence */
+    object-fit: cover;
+    border-radius: 0.375em;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .feature-v6__icon-wrapper {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px hsla(230, 13%, 9%, 0.05);
+    background-color: hsl(0, 0%, 100%);
+    margin-bottom: 1rem;
+  }
+  
+  .feature-v6__icon {
+    --size: 24px;
+    color: hsl(250, 84%, 54%);
+  }
+  
+  .feature-v6__description {
+    color: hsl(225, 4%, 47%);
+    line-height: 1.58;
+  }
+  
+  @media (min-width: 64rem) {
+    .feature-v6__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* -------------------------------- 
+  
+  Utilities 
+  
+  -------------------------------- */
+  
+  .cd-margin-x-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cd-margin-bottom-2xs {
+    margin-bottom: 0.75rem;
+  }
+  
+  .cd-margin-bottom-xs {
+    margin-bottom: 1rem;
+  }
+  
+  .cd-padding-y-xl {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  
+  .cd-container {
+    width: calc(100% - 3rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cd-max-width-adaptive-lg {
+    max-width: 32rem;
+  }
+  
+  @media (min-width: 64rem) {
+    .cd-max-width-adaptive-lg {
+      max-width: 64rem;
+    }
+  }
+  
+  @media (min-width: 85.5rem) {
+    .cd-max-width-adaptive-lg {
+      max-width: 80rem;
+    }
+  }
+  
+  .cd-link {
+    color: hsl(250, 84%, 54%);
+    text-decoration: none;
+    background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+    background-size: 200% 1px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    transition: background-position 0.2s;
+  }
+  
+  .cd-link:hover {
+    background-position: 0% 100%;
+  }
+  
+  .cd-text-center {
+    text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

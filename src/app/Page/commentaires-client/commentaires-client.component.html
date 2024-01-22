@@ -1,0 +1,62 @@
+
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+<div class="stories">
+    <h3 class="stories__legend">Commentaires</h3>
+    <br>
+    <div class="card" *ngFor="let item of (services.apiValue$ | async)">
+    <ol class="stories__list">
+      <li class="stories__story">
+        <a href="#0" class="stories__img-wrapper">
+          <figure>
+            <img src="assets/img/conv.gif" alt="Image description">
+          </figure>
+        </a>
+        <br>
+        <div class="stories__text sz3-text-component sz3-line-height-md sz3-text-gap-2xs">
+          <h4 class="stories__headline"><a>{{item.nom+' '+item.prenom}}</a></h4>
+          <p class="stories__metadata"><time datetime="2020-05-10">{{item.commentaire
+          }}</time> <span class="stories__separator" role="separator"></span> <a >{{item.cdate
+          }}</a></p>
+        </div>
+      </li>
+ 
+     
+    </ol>
+    <br>
+  </div>
+
+  </div>
+  
+
+
+
+
+
+  <form [formGroup]="profileForm"  #f="ngForm"  class="form-container">
+
+  <div class="input-group">
+    <textarea  formControlName="Commentaire" class="form-control" aria-label="With textarea"></textarea>
+    <span class="input-group-text">
+      <button (click)="cmnt()" mat-icon-button style="color: #3CA6A6;" placement="bottom" ngbTooltip="Envoyer"  >
+        <i class="fa-regular fa-paper-plane"></i></button>
+
+
+
+    </span>
+
+  </div>
+
+</form>
+  <br>

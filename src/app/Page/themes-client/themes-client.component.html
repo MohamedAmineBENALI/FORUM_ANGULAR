@@ -1,0 +1,58 @@
+<div id="navbar">
+    <ul>
+        <li><a routerLink="/Forums">Forums</a></li>
+        <li><a routerLink="/Themes">Themes</a></li>
+        <li><a routerLink="/Profil">Profil</a></li>
+        <li><a routerLink="/">Logout</a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="Forums" *ngFor="let Theme of Themes">
+            <br>
+            <a routerLink="/Postes" class="banner" aria-label="Shop now">
+                <div class="banner__grid">
+                    <div aria-hidden="true" *ngIf="Theme.titre === 'PIZZARIA'">
+                        <figure class="banner__figure" style="background-image: url(assets/img/pizza.jpg);">
+                        </figure>
+                    </div>
+
+
+                    <div aria-hidden="true" *ngIf="Theme.titre === 'RESTAURANT'">
+                        <figure class="banner__figure" style="background-image: url(assets/img/resto.jpg);">
+                        </figure>
+                    </div>
+
+
+                    <div aria-hidden="true" *ngIf="Theme.titre === 'PATISSERIE'">
+                        <figure class="banner__figure" style="background-image: url(assets/img/patisserie.jpg);">
+                        </figure>
+                    </div>
+
+
+                    <div aria-hidden="true" *ngIf="Theme.titre === 'CAFÉ'">
+                        <figure class="banner__figure" style="background-image: url(assets/img/cafe.jpg);">
+                        </figure>
+                    </div>
+
+
+
+
+                    <div class="banner__text">
+                        <h2>{{Theme.titre}}</h2>
+
+                        <p class="banner__link-wrapper">
+                            <span class="banner__link" (click)="PostesID(Theme.id)"><i>Voir les postes</i></span>
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+
+
+
+        </div>
+    </div>
+
+
+    <br>
